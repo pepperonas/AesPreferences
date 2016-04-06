@@ -1711,7 +1711,7 @@ public class AesPrefs {
          * @return the version info
          */
         public static String getVersionInfo() {
-            return "aesprefs-" + BuildConfig.VERSION_NAME;
+            return "aespreferences-" + BuildConfig.VERSION_NAME;
         }
 
 
