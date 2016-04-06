@@ -65,7 +65,9 @@ public class AesPrefs {
          *
          * @param i the
          */
-        LogMode(int i) {this.mode = i;}
+        LogMode(int i) {
+            this.mode = i;
+        }
     }
 
 
@@ -315,9 +317,9 @@ public class AesPrefs {
         SharedPreferences sp = mCtx.getSharedPreferences(mFilename, Context.MODE_PRIVATE);
 
         sp.edit()
-          .putString(encryptedKey, encryptedValue)
-          .putLong(encryptedKey + TAIL, iv)
-          .apply();
+                .putString(encryptedKey, encryptedValue)
+                .putLong(encryptedKey + TAIL, iv)
+                .apply();
 
         if (mLog == LogMode.ALL || mLog == LogMode.SET) {
             Log.d(TAG, "put " + key + " <- " + value);
@@ -423,9 +425,9 @@ public class AesPrefs {
         SharedPreferences sp = mCtx.getSharedPreferences(mFilename, Context.MODE_PRIVATE);
 
         sp.edit()
-          .putString(encryptedKey, encryptedValue)
-          .putLong(encryptedKey + TAIL, iv)
-          .apply();
+                .putString(encryptedKey, encryptedValue)
+                .putLong(encryptedKey + TAIL, iv)
+                .apply();
 
         if (mLog == LogMode.ALL || mLog == LogMode.SET) {
             Log.d(TAG, "putInt " + key + " <- " + value);
@@ -527,9 +529,9 @@ public class AesPrefs {
         SharedPreferences sp = mCtx.getSharedPreferences(mFilename, Context.MODE_PRIVATE);
 
         sp.edit()
-          .putString(encryptedKey, encryptedValue)
-          .putLong(encryptedKey + TAIL, iv)
-          .apply();
+                .putString(encryptedKey, encryptedValue)
+                .putLong(encryptedKey + TAIL, iv)
+                .apply();
 
         if (mLog == LogMode.ALL || mLog == LogMode.SET) {
             Log.d(TAG, "putLong " + key + " <- " + value);
@@ -631,9 +633,9 @@ public class AesPrefs {
         SharedPreferences sp = mCtx.getSharedPreferences(mFilename, Context.MODE_PRIVATE);
 
         sp.edit()
-          .putString(encryptedKey, encryptedValue)
-          .putLong(encryptedKey + TAIL, iv)
-          .apply();
+                .putString(encryptedKey, encryptedValue)
+                .putLong(encryptedKey + TAIL, iv)
+                .apply();
 
         if (mLog == LogMode.ALL || mLog == LogMode.SET) {
             Log.d(TAG, "putDouble " + key + " <- " + value);
@@ -735,9 +737,9 @@ public class AesPrefs {
         SharedPreferences sp = mCtx.getSharedPreferences(mFilename, Context.MODE_PRIVATE);
 
         sp.edit()
-          .putString(encryptedKey, encryptedValue)
-          .putLong(encryptedKey + TAIL, iv)
-          .apply();
+                .putString(encryptedKey, encryptedValue)
+                .putLong(encryptedKey + TAIL, iv)
+                .apply();
 
         if (mLog == LogMode.ALL || mLog == LogMode.SET) {
             Log.d(TAG, "putFloat " + key + " <- " + value);
@@ -839,9 +841,9 @@ public class AesPrefs {
         SharedPreferences sp = mCtx.getSharedPreferences(mFilename, Context.MODE_PRIVATE);
 
         sp.edit()
-          .putString(encryptedKey, encryptedValue)
-          .putLong(encryptedKey + TAIL, iv)
-          .apply();
+                .putString(encryptedKey, encryptedValue)
+                .putLong(encryptedKey + TAIL, iv)
+                .apply();
 
         if (mLog == LogMode.ALL || mLog == LogMode.SET) {
             Log.d(TAG, "putBoolean " + key + " <- " + value);
@@ -942,9 +944,9 @@ public class AesPrefs {
         SharedPreferences sp = mCtx.getSharedPreferences(mFilename, Context.MODE_PRIVATE);
 
         sp.edit()
-          .putInt(encryptedKey + "_size", values.size())
-          .putLong(encryptedKey + TAIL, iv)
-          .apply();
+                .putInt(encryptedKey + "_size", values.size())
+                .putLong(encryptedKey + TAIL, iv)
+                .apply();
 
         for (int i = 0; i < values.size(); i++) {
             String encryptedValue = Crypt.encrypt(mPassword, values.get(i), iv);
@@ -1611,13 +1613,13 @@ public class AesPrefs {
         mLog = LogMode.NONE;
         int versionCode = getInt("aes_app_version_code", -1);
         if ((versionCode != AppUtils.getVersionCode(mCtx))
-            || (versionCode == -1)) {
+                || (versionCode == -1)) {
             putInt("aes_app_version_code", AppUtils.getVersionCode(mCtx));
             // restore mLog before return.
             mLog = tmp;
             if (tmp == LogMode.ALL) {
                 Log.i(TAG, "initOrCheckVersionCode: " + ((versionCode == -1) ? "Counter initialised." :
-                                                         "Version has changed."));
+                        "Version has changed."));
             }
             // return false when counter is initialised.
             return versionCode != -1;
@@ -1692,11 +1694,22 @@ public class AesPrefs {
 
     public static class Version {
 
+
+        /**
+         * Gets version name.
+         *
+         * @return the version name
+         */
         public static String getVersionName() {
             return BuildConfig.VERSION_NAME;
         }
 
 
+        /**
+         * Gets version info.
+         *
+         * @return the version info
+         */
         public static String getVersionInfo() {
             return "aesprefs-" + BuildConfig.VERSION_NAME;
         }
@@ -1707,18 +1720,18 @@ public class AesPrefs {
          */
         public static String getLicense() {
             return "Copyright (c) 2016 Martin Pfeffer\n" +
-                   " \n" +
-                   "Licensed under the Apache License, Version 2.0 (the \"License\");\n" +
-                   "you may not use this file except in compliance with the License.\n" +
-                   "You may obtain a copy of the License at\n" +
-                   " \n" +
-                   "     http://www.apache.org/licenses/LICENSE-2.0\n" +
-                   " \n" +
-                   "Unless required by applicable law or agreed to in writing, software\n" +
-                   "distributed under the License is distributed on an \"AS IS\" BASIS,\n" +
-                   "WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n" +
-                   "See the License for the specific language governing permissions and\n" +
-                   "limitations under the License.";
+                    " \n" +
+                    "Licensed under the Apache License, Version 2.0 (the \"License\");\n" +
+                    "you may not use this file except in compliance with the License.\n" +
+                    "You may obtain a copy of the License at\n" +
+                    " \n" +
+                    "     http://www.apache.org/licenses/LICENSE-2.0\n" +
+                    " \n" +
+                    "Unless required by applicable law or agreed to in writing, software\n" +
+                    "distributed under the License is distributed on an \"AS IS\" BASIS,\n" +
+                    "WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n" +
+                    "See the License for the specific language governing permissions and\n" +
+                    "limitations under the License.";
         }
 
     }
