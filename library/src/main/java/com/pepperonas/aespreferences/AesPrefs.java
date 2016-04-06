@@ -1693,7 +1693,7 @@ public class AesPrefs {
     public static class Version {
 
         public static String getVersionName() {
-            return BuildConfinitig.VERSION_NAME;
+            return BuildConfig.VERSION_NAME;
         }
 
 
