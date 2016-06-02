@@ -20,9 +20,16 @@ and add the library to your dependencies:
 ```
 
 
+##ProGuard
+```
+-keep class com.pepperonas.aespreferences.** { *; }
+-dontwarn com.pepperonas.aespreferences.**
+```
+
 
 ##Showcase
 Soon...
+
 
 ##Developed By
 
