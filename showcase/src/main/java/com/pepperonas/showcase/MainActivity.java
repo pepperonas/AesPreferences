@@ -1,9 +1,7 @@
 package com.pepperonas.showcase;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
-import com.pepperonas.aespreferences.R;
+import android.support.v7.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
