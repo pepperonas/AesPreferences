@@ -16,7 +16,7 @@ Add JitPack to your repositories:
 and add the library to your dependencies:
 
 ```
-    compile 'com.github.pepperonas:aespreferences:0.0.5'
+    compile 'com.github.pepperonas:aespreferences:0.0.6'
 ```
 
 
@@ -38,7 +38,7 @@ Soon...
 
 ##License
 
-    Copyright 2016 Martin Pfeffer
+    Copyright 2017 Martin Pfeffer
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
