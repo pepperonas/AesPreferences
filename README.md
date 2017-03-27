@@ -2,8 +2,8 @@
 This tiny Android library provides encryption for the SharedPreferences.
 
 
-##How to use
-###1. Import
+## How to use
+### 1. Import
 Add JitPack to your repositories:
 
 ```
@@ -20,23 +20,19 @@ and add the library to your dependencies:
 ```
 
 
-##ProGuard
+## ProGuard
 ```
 -keep class com.pepperonas.aespreferences.** { *; }
 -dontwarn com.pepperonas.aespreferences.**
 ```
 
 
-##Showcase
-Soon...
+## Developed By
+
+* Martin Pfeffer - https://celox.io - <martin.pfeffer@celox.io>
 
 
-##Developed By
-
-* Martin Pfeffer - http://www.pepperonas.com - <pepperonas@gmail.com>
-
-
-##License
+## License
 
     Copyright 2017 Martin Pfeffer
 
